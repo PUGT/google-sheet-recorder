@@ -1,0 +1,11 @@
+{
+	"COLLECTION_NAME" : "Rushee",
+	"CRON_INTERVAL" : "*/1 * * * *",
+	"EMPTY_GSHEET_MESSAGE" : "No data found.",
+	"GSHEET_SCOPES" : ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+	"GSHEET_TOKEN_PATH" : "token.json",
+	"MONGO_CLIENT_LOCAL" : "mongodb://localhost:27017",
+	"SPREADSHEET_ID" : "11_spMebBdT_b6ubwdyjYBJT68AlMmyHcoU2jNqmQXMA",
+	"SPREADSHEET_RANGE" : "A2:E"
+
+}
