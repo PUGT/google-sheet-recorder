@@ -4,8 +4,8 @@ var fs = require('fs');
 var readline = require('readline');
 var {google} = require('googleapis');
 var MongoClient = require('mongodb').MongoClient;
-const SCOPES = config.GSHEET_SCOPES
-const TOKEN_PATH = config.GSHEET_TOKEN_PATH
+const SCOPES = config.GSHEET_SCOPES;
+const TOKEN_PATH = config.GSHEET_TOKEN_PATH;
 const url = config.MONGO_CLIENT;
 
 module.exports = {

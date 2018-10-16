@@ -1,12 +1,17 @@
 var MongoClient = require('mongodb').MongoClient;
 var config = require('./config.json');
 
-module.exports = {
-	addRushees: function(rushees) {
-		MongoClient.connect(config.MONGO_CLIENT_LOCAL, function(err, client) {
+var database = config.DB_LOCAL;
+var url = database.CLIENT;
+var name = database.NAME;
+var collection = config.COLLECTION_NAME.PNM;
 
-			db = client.db('local');
-			db.collection(config.COLLECTION_NAME).insertMany(rushees);
+module.exports = {
+	addRushees: function(users) {
+		MongoClient.connect(url, function(err, client) {
+
+			db = client.db(name);
+			db.collection(collection).insertMany(users);
 			client.close();
 		});
 	}

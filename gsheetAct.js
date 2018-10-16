@@ -2,17 +2,14 @@ var mongoActs = require('./mongoActions.js');
 var config = require('./config.json');
 var {google} = require('googleapis');
 var Student = require('./student.js');
-/**
-* Prints the names and majors of students in a sample spreadsheet:
-* @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-* @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
-*/
+var sheetID = config.SPREADSHEET_ID;
+var sheetRange = config.SPREADSHEET_RANGE;
 module.exports = {
 	listStudents: function(auth) {
 		const sheets = google.sheets({version: 'v4', auth});
 		sheets.spreadsheets.values.get({
-			spreadsheetId: config.SPREADSHEET_ID,
-			range: config.SPREADSHEET_RANGE,
+			spreadsheetId: sheetID,
+			range: sheetRange,
 		}, (err, res) => {
 			if (err) return console.log('The API returned an error: ' + err);
 			const rows = res.data.values;
@@ -32,7 +29,7 @@ module.exports = {
 				});
 				mongoActs.addRushees(rushees);
 			} else {
-				console.log(config.EMPTY_GSHEET_MESSAGE);
+				console.log("No data found!");
 			}
 		});
 	}

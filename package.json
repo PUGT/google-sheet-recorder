@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "git clone https://github.com/sohuja96/configs.git && mv configs/config.json . && rm -rf configs/",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joshua Santillo",
