@@ -23,7 +23,7 @@ module.exports = {
 				rows.map((row) => {
 					rushees.push({
 						"name" : row[0],
-						"gtid" : row[1],
+						"_id" : row[1],
 						"email" : row[2],
 						"phone" : row[3],
 						"year" : row[4],
